@@ -1,0 +1,387 @@
+@font-face {
+    font-family: "Noto Sans SC";
+    src: url("./assets/font/NotoSansSC-Thin.otf");
+}
+#root{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.home{
+    height: 100%;
+}
+.container{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 70% auto;
+    background-image: url("https://matalan-content.imgix.net/uploads/asset_file/asset_file/308249/1613127874.4500332-S2830301_C128_Alt1.jpg?ixlib=rails-2.1.4&cs=tinysrgb&auto=compress%2Cformat&fm=pjpg&w=736&h=1030&fit=crop&dpr=2&s=966cd77b69d31c1813b3d73d07c1807c");
+}
+
+.welcom{
+    color: rgb(2, 3, 10);
+    font-size: 80px;
+    font-family: "sans-serif";
+    position: absolute;
+    top: 25%; 
+    left: 28%;
+}
+
+h1 span{
+    position: relative;
+}
+
+.buttonsign
+{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border-color: white;
+    border: 2px solid;
+    font-family: "kaushan script";
+    font-size: 1.25em;
+    transition: 0.5s ease-in-out;
+    margin-top: 10px;
+}
+
+.buttonsign:hover{
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.signin{
+    position: relative;
+    left: 40%;
+}
+
+.signup{
+    position: relative;
+    left: 45%;
+}
+.formin{
+    position: relative;
+    left: 6%;
+    height: 100%;
+}
+#overlayIn{
+    
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+.connin
+{
+    font-size: 20px;
+    color: white;
+    position: relative;
+    bottom: 20%;
+    left: 35%;
+    font-family: Georgia;
+    opacity: 0;
+    
+}
+
+.password
+{
+    width: 350px;
+    height: 30px;
+    position: relative;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    top: 40%;
+    border: none;
+    outline: none;
+    opacity: 0;
+}
+
+.pseudo
+{
+    width: 350px;
+    height: 30px;
+    display: block;
+    position: relative;
+    top: 35%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    opacity: 0;
+}
+
+.subin
+{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+    top: 45%;
+    background-color:black ;
+    border: 2px solid;
+    border-color: white;
+    color: white;
+    font-family: Georgia;
+    transition: 0.5s;
+    opacity: 0;
+    
+}
+
+.subin:hover
+{
+    background-color: white;
+    color: black;
+}
+
+.in{
+    height: 100%;
+    width: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    visibility: hidden;
+}
+
+.up{
+    height: 100%;
+    width: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    visibility: hidden;
+}
+
+.notmember{
+    color: white;
+    position: relative;
+    font-size: 14px;
+    font-family: Georgia;
+    top: 23%;
+    right: 29%;
+    opacity: 0;
+}
+
+.closein{
+    transform-origin:50% 50%;
+    position: relative;
+    left: 85%;
+    bottom: 46%;
+    height: 28.2px;
+    opacity: 0;
+}
+
+.url{
+    cursor: pointer;
+}
+
+.closeup{
+    transform-origin:50% 50%;
+    position: relative;
+    left: 82%;
+    bottom: 46%;
+    height: 28.2px;
+    opacity: 0;
+}
+
+.closebutton:nth-of-type(1){
+    height: 2px;
+    width: 20px;
+    transform:translateY(-50%) rotate(45deg);
+    background-color: white;
+    position: relative;
+    top: 50%;
+    display: block;
+
+}
+
+.closebutton:nth-of-type(2){
+    height: 2px;
+    width: 20px;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+
+}
+
+.formup{
+    position: relative;
+    height: 100%;
+    right: 5%;
+}
+
+.formup input:not(#homme, #femme, #autre){
+    opacity: 0;
+    position: relative;
+}
+
+.connup{
+    font-size: 20px;
+    color: white;
+    position: relative;
+    bottom: 40%;
+    left: 30%;
+    font-family: Georgia;
+    opacity: 0;
+    display: block;
+}
+
+.username{
+    width: 440px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    top: 15%;
+    display: block;
+}
+
+.mail{
+    width: 440px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    top: 20%;
+    display: block;
+}
+
+.mdp{
+    width: 440px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    top: 25%;
+    display: block;
+}
+
+.mdpc{
+    width: 440px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    top: 30%;
+    display: block;
+}
+
+.date{
+    width: 440px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    top: 35%;
+    display: block;
+}
+
+.genre{
+    display: block;
+    position: relative;
+    top: 40%;
+    opacity: 0;
+}
+
+.genderinf{
+    color: white;
+    padding-left: 3px;
+    padding-right: 15px;
+    font-family: Georgia;
+    font-size: 14px;
+}
+
+
+.subup{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color:black ;
+    border: 2px solid;
+    border-color: white;
+    color: white;
+    font-family: Georgia;
+    transition: 0.5s;
+    top: 45%;
+    right: 2%;
+}
+
+
+.subup:hover
+{
+    background-color: white;
+    color: black;
+}
+
+.usererror{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 16%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+
+}
+
+.emailerror{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 21%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+}
+
+.controlpasserror{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 31%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+
+}
+
+.passerror{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 24%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+
+}
+
+.mailwarning{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 36%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+
+}
+
+.passwordwarning{
+    color: rgb(141, 0, 0);
+    position: relative;
+    top: 42%;
+    padding-top: 5px;
+    font-family: "Noto Sans SC";
+
+}
+
