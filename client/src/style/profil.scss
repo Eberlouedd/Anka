@@ -100,7 +100,9 @@
 
 .lvlInfo{
     color: white;
+    max-width: 200px;
 }
+
 
 .objectif-post{
     width: 440px;
@@ -151,18 +153,15 @@
 }
 
 .workinteract{
-    border-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
     width: 100px;
     background: none;
-    transition: 0.3s ease-in-out;
     font-family: "Noto Sans SC";
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.workinteract:hover{
-
-    border-radius: 10px;
-
-}
 
 .delquest{
     transform-origin:50% 50%;
@@ -217,14 +216,16 @@
 
 .questForm{
     position: absolute;
-    top: 95%;
+    top: 90%;
+    text-align: center;
+    right: 28%;
 }
 
 .updateObjectifForm{
     position: absolute;
     float: left;
     bottom: -50%;
-    left: 10%;
+    left: 9%;
     text-align: center;
     
 }
@@ -257,5 +258,12 @@
     border: 1px solid white;
     font-family: 'Noto Sans SC';
     margin-top: 10px;
+}
+
+.questinput{
+    height: 15px;
+    margin-bottom: 5px;
+    width: 300px;
+        
 }
 
