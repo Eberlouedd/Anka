@@ -14,7 +14,7 @@ const Workspace = () =>{
     const userData = useSelector((state) => state.userReducer)
     const userDataWork = useSelector((state) => state.workReducer)
      
-       
+    
     const handleWork = (e) => {
         e.preventDefault()
         if(objectif === ''){
@@ -46,10 +46,11 @@ const Workspace = () =>{
         dispatch(delQuest(newQuestList, e, userData._id))
     }
 
-    const handleCheck = async (e) => {
+    const handleCheck = async (e, nbChecked) => {
+            
             dispatch(addDelChecked(e, userData._id))
-            if(userDataWork.checkedQuest.length === userDataWork.quest.length - 1){
-                alert('Bravo !')
+            if(nbChecked === userDataWork.quest.length ){
+                
                 await axios({
                     method: 'put',
                     url: 'http://localhost:8080/user/update/xp/' + userData._id,
@@ -64,11 +65,13 @@ const Workspace = () =>{
                     url: 'http://localhost:8080/user/workspace/deleteWork/' + userData._id,
                 })
                 .then((res) => {
-                    window.location= '/'
+                    window.location = '/'
                 })
                 .catch((err) => console.log(err))
                 
             }
+            
+            
     }
     return(
         <div className="workspace">
@@ -95,7 +98,7 @@ const Workspace = () =>{
                                                     <span className="delquesticone"></span>
                                                     <span className="delquesticone"></span>
                                                 </button>
-                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key)} defaultChecked={true}/>
+                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key, userDataWork.checkedQuest.length - 1)} defaultChecked={true}/>
                                                 <label htmlFor={key}>{questEnum}</label>
                                             </div>
                                 }else{
@@ -104,7 +107,7 @@ const Workspace = () =>{
                                                     <span className="delquesticone"></span>
                                                     <span className="delquesticone"></span>
                                                 </button>
-                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key)}/>
+                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key, userDataWork.checkedQuest.length + 1)}/>
                                                 <label htmlFor={key}>{questEnum}</label>
                                             </div>
                                 }
@@ -125,18 +128,34 @@ const Workspace = () =>{
                             
                             userDataWork.quest.map((questEnum, key) => {
                                 if(userDataWork.checkedQuest.includes(key)){
-                                    return <div key={key}><button onClick={handleDelQuest.bind(this, key)}>croix</button><input id={key} type="checkbox" defaultChecked={true}/><label htmlFor={key}>{questEnum}</label></div>
+                                    return <div key={key} className="questList">
+                                                <button onClick={handleDelQuest.bind(this, key)} className="delquest">
+                                                    <span className="delquesticone"></span>
+                                                    <span className="delquesticone"></span>
+                                                </button>
+                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key, userDataWork.checkedQuest.length - 1)} defaultChecked={true}/>
+                                                <label htmlFor={key}>{questEnum}</label>
+                                            </div>
                                 }else{
-                                    return <div key={key}><button onClick={handleDelQuest.bind(this, key)}>croix</button><input id={key} type="checkbox"/><label htmlFor={key}>{questEnum}</label></div>
+                                    return <div key={key} className="questList">
+                                                <button onClick={handleDelQuest.bind(this, key)} className="delquest">
+                                                    <span className="delquesticone"></span>
+                                                    <span className="delquesticone"></span>
+                                                </button>
+                                                <input id={key} type="checkbox" onChange={handleCheck.bind(this, key, userDataWork.checkedQuest.length + 1)}/>
+                                                <label htmlFor={key}>{questEnum}</label>
+                                            </div>
                                 }
                             })                 
                         }
                         <div className="errorQuest"></div>
                         </div>
-                        <form action="" onSubmit={handleQuest} className="questForm">
-                            <input type="text" onChange={(e) => {setQuest(e.target.value)}} value={quest} />
-                            <input type="submit" value="Ajouter" className="workinteract"/> 
-                        </form>
+                        <div>
+                            <form action="" onSubmit={handleQuest} className="questForm">
+                                <input type="text" onChange={(e) => {setQuest(e.target.value)}} value={quest} className="questinput"/><br/>
+                                <input type="submit" value="Ajouter" className="workinteract"/> 
+                            </form>
+                        </div>
                     </>
                 }
                 
